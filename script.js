@@ -159,7 +159,9 @@ function populateIFCTTable() {
   const tbody = document.querySelector("#ifctTable tbody");
   tbody.innerHTML = "";
 
-  for (const food in IFCT_FOOD_VALUES) {
+  const sortedFoods = Object.keys(IFCT_FOOD_VALUES).sort(); // Sort alphabetically
+
+  for (const food of sortedFoods) {
     const item = IFCT_FOOD_VALUES[food];
     const row = document.createElement("tr");
 
@@ -178,6 +180,7 @@ function populateIFCTTable() {
     tbody.appendChild(row);
   }
 }
+
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
