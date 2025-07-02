@@ -24,7 +24,25 @@ const IFCT_FOOD_VALUES = {
   "Peas":  { energy: 1269, protein: 20.43, fat: 1.89, cho: 48.93, fiber: 0.0, sodium: 23.40, potassium: 922, moisture: 9.33 },
   "Onion Small":  { energy: 237, protein: 1.82, fat: 0.16, cho: 11.58, fiber: 0.0, sodium: 4.06, potassium: 160, moisture: 84.67 },
   "Ground nut":  { energy: 2176, protein: 23.65, fat: 39.63, cho: 17.27, fiber: 0.0, sodium: 12.21, potassium: 679, moisture: 6.97 },
-  "Coconut water":  { energy: 64, protein: 0.26, fat: 0.16, cho: 0.0, fiber: 0.0, sodium: 28.09, potassium: 215, moisture: 95.77 }
+  "Coconut water":  { energy: 64, protein: 0.26, fat: 0.16, cho: 0.0, fiber: 0.0, sodium: 28.09, potassium: 215, moisture: 95.77 },
+  "Bajra":         { energy: 1456, protein: 10.96, fat: 5.43, cho: 61.78, fiber: 0.0, sodium: 7.56, potassium: 268, moisture: 8.97 },
+  "Semolina":      { energy: 1396, protein: 11.38, fat: 0.74, cho: 68.43, fiber: 0.0, sodium: 2.31, potassium: 284, moisture: 8.94 },
+  "Bittergourd":   { energy: 87,   protein: 1.44,  fat: 0.24, cho: 2.82,  fiber: 0.0, sodium: 13.09, potassium: 326, moisture: 90.87 },
+  "Drum Stick":    { energy: 123,  protein: 2.62,  fat: 0.12, cho: 3.76,  fiber: 0.0, sodium: 22.38, potassium: 419, moisture: 85.39 },
+  "Ladies Finger": { energy: 115,  protein: 2.08,  fat: 0.22, cho: 3.62,  fiber: 0.0, sodium: 7.37,  potassium: 263, moisture: 89.06 },
+  "Papaya":        { energy: 100,  protein: 0.50,  fat: 0.23, cho: 4.40,  fiber: 0.0, sodium: 6.68,  potassium: 173,  moisture: 92.04 },
+  "Apricot":       { energy: 1321, protein: 3.17,  fat: 0.74, cho: 72.63, fiber: 0.0, sodium: 3.94,  potassium: 285, moisture: 16.68 },
+  "Banana":        { energy: 463,  protein: 1.25,  fat: 0.32, cho: 24.95, fiber: 0.0, sodium: 1.25,  potassium: 362, moisture: 70.13 },
+  "Orange":        { energy: 156,  protein: 0.70,  fat: 0.13, cho: 7.92,  fiber: 0.0, sodium: 1.47,  potassium: 164, moisture: 89.61 },
+  "Beet Root":     { energy: 149,  protein: 1.95,  fat: 0.14, cho: 6.18,  fiber: 0.0, sodium: 6.44,  potassium: 306, moisture: 86.95 },
+  "Potato (Small)":{ energy: 255,  protein: 1.35,  fat: 0.22, cho: 12.00, fiber: 0.0, sodium: 3.97,  potassium: 474, moisture: 82.97 },
+  "Sweet Potato":  { energy: 456,  protein: 1.33,  fat: 0.26, cho: 24.25, fiber: 0.0, sodium: 29.60, potassium: 345, moisture: 69.21 },
+  "Cashew Nut":    { energy: 2438, protein: 18.78, fat: 45.20, cho: 25.46, fiber: 0.0, sodium: 9.00,  potassium: 635, moisture: 4.44 },
+  "Jaggery":       { energy: 1480, protein: 1.85,  fat: 0.16, cho: 84.87, fiber: 0.0, sodium: 25.38, potassium: 488, moisture: 11.20 },
+  "Cow Milk":      { energy: 305,  protein: 3.26,  fat: 4.48, cho: 4.94,  fiber: 0.0, sodium: 25.46, potassium: 115, moisture: 86.64 },
+  "Paneer":        { energy: 1079, protein: 18.68, fat: 14.78, cho: 12.41, fiber: 0.0, sodium: 18.04, potassium: 63.53, moisture: 51.96 },
+  "Egg White":     { energy: 220,  protein: 12.37, fat: 0.26, cho: 0.00,  fiber: 0.0, sodium: 144,   potassium: 147, moisture: 83.54 },
+  "Barley":     { energy: 1321,  protein: 10.94, fat: 1.30, cho: 61.29,  fiber: 0.0, sodium: 7.56,   potassium: 268, moisture: 9.77 },
 };
 
 
