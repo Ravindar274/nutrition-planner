@@ -93,22 +93,36 @@ function updateNutrition(element) {
   const data = IFCT_FOOD_VALUES[food];
 
   if (data) {
-    row.cells[2].querySelector('input').value = ((quantity * data.energy) / 100 * 0.25).toFixed(2);
-    row.cells[3].querySelector('input').value = ((quantity * data.protein) / 100).toFixed(2);
-    row.cells[4].querySelector('input').value = ((quantity * data.cho) / 100).toFixed(2);
-    row.cells[5].querySelector('input').value = ((quantity * data.fat) / 100).toFixed(2);
-    row.cells[6].querySelector('input').value = ((quantity * data.fiber) / 100).toFixed(2);
-    row.cells[7].querySelector('input').value = ((quantity * data.sodium) / 100).toFixed(2);
-    row.cells[8].querySelector('input').value = ((quantity * data.potassium) / 100).toFixed(2);
-    row.cells[9].querySelector('input').value = ((quantity * data.moisture) / 100).toFixed(2);
+    // Calculate raw values
+    const energyVal = (quantity * data.energy) / 100 * 0.25;
+    const proteinVal = (quantity * data.protein) / 100;
+    const choVal = (quantity * data.cho) / 100;
+    const fatVal = (quantity * data.fat) / 100;
+    const fiberVal = (quantity * data.fiber) / 100;
+    const sodiumVal = (quantity * data.sodium) / 100;
+    const potassiumVal = (quantity * data.potassium) / 100;
+    const moistureVal = (quantity * data.moisture) / 100;
+
+    // Set displayed values (rounded to 2 decimal places)
+    row.cells[2].querySelector('input').value = isNaN(energyVal) ? "0.00" : energyVal.toFixed(2);
+    row.cells[3].querySelector('input').value = isNaN(proteinVal) ? "0.00" : proteinVal.toFixed(2);
+    row.cells[4].querySelector('input').value = isNaN(choVal) ? "0.00" : choVal.toFixed(2);
+    row.cells[5].querySelector('input').value = isNaN(fatVal) ? "0.00" : fatVal.toFixed(2);
+    row.cells[6].querySelector('input').value = isNaN(fiberVal) ? "0.00" : fiberVal.toFixed(2);
+    row.cells[7].querySelector('input').value = isNaN(sodiumVal) ? "0.00" : sodiumVal.toFixed(2);
+    row.cells[8].querySelector('input').value = isNaN(potassiumVal) ? "0.00" : potassiumVal.toFixed(2);
+    row.cells[9].querySelector('input').value = isNaN(moistureVal) ? "0.00" : moistureVal.toFixed(2);
   } else {
+    // If no valid food selected, reset values to 0.00
     for (let i = 2; i <= 9; i++) {
       row.cells[i].querySelector('input').value = "0.00";
     }
   }
 
+  // Always recalculate totals after updating
   calculateTotals();
 }
+
 
 function removeRow(button) {
   const row = button.closest("tr");
@@ -126,7 +140,8 @@ function calculateTotals() {
 
   for (const row of tbody.rows) {
     fields.forEach((field, index) => {
-      totals[field] += parseFloat(row.cells[2 + index].querySelector('input').value) || 0;
+      const cellValue = parseFloat(row.cells[2 + index].querySelector('input').value);
+      totals[field] += isNaN(cellValue) ? 0 : cellValue;
     });
   }
 
@@ -134,12 +149,17 @@ function calculateTotals() {
     document.getElementById('total' + capitalize(field)).textContent = totals[field].toFixed(2);
   });
 
-  const rda = Object.fromEntries(fields.map(f => [f, parseFloat(document.getElementById('rda' + capitalize(f)).value) || 0]));
+  const rda = Object.fromEntries(fields.map(f => {
+    const rdaVal = parseFloat(document.getElementById('rda' + capitalize(f)).value);
+    return [f, isNaN(rdaVal) ? 0 : rdaVal];
+  }));
 
   fields.forEach((field, index) => {
-    document.getElementById('diff' + capitalize(field)).textContent = (totals[field] - rda[field]).toFixed(2);
+    const diff = totals[field] - rda[field];
+    document.getElementById('diff' + capitalize(field)).textContent = diff.toFixed(2);
   });
 }
+
 
 function toggleIFCTTable() {
   const container = document.getElementById("ifctTableContainer");

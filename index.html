@@ -12,62 +12,62 @@
 <input id="editableHeading" value="Nutrition Table" />
 
 <div class="table-wrapper">
-<table id="nutritionTable">
-  <thead>
-    <tr>
-      <th>Food Item</th>
-      <th>Quantity (g)</th>
-      <th>Energy (kcal)</th>
-      <th>Protein (g)</th>
-      <th>CHO (g)</th>
-      <th>Fat (g)</th>
-      <th>Fiber (g)</th>
-      <th>Sodium (mg)</th>
-      <th>Potassium (mg)</th>
-      <th>Moisture (%)</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody id="tableBody"></tbody>
-  <tfoot>
-    <tr class="total-row">
-      <td colspan="2">Total</td>
-      <td id="totalEnergy">0.00</td>
-      <td id="totalProtein">0.00</td>
-      <td id="totalCHO">0.00</td>
-      <td id="totalFat">0.00</td>
-      <td id="totalFiber">0.00</td>
-      <td id="totalSodium">0.00</td>
-      <td id="totalPotassium">0.00</td>
-      <td id="totalMoisture">0.00</td>
-      <td></td>
-    </tr>
-    <tr class="rda-row">
-      <td colspan="2">RDA (Editable)</td>
-      <td><input id="rdaEnergy" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaProtein" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaCHO" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaFat" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaFiber" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaSodium" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaPotassium" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td><input id="rdaMoisture" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
-      <td></td>
-    </tr>
-    <tr class="diff-row">
-      <td colspan="2">Difference</td>
-      <td id="diffEnergy">0.00</td>
-      <td id="diffProtein">0.00</td>
-      <td id="diffCHO">0.00</td>
-      <td id="diffFat">0.00</td>
-      <td id="diffFiber">0.00</td>
-      <td id="diffSodium">0.00</td>
-      <td id="diffPotassium">0.00</td>
-      <td id="diffMoisture">0.00</td>
-      <td></td>
-    </tr>
-  </tfoot>
-</table>
+  <table id="nutritionTable">
+    <thead>
+      <tr>
+        <th>Food Item</th>
+        <th>Quantity (g)</th>
+        <th>Energy (kcal)</th>
+        <th>Protein (g)</th>
+        <th>CHO (g)</th>
+        <th>Fat (g)</th>
+        <th>Fiber (g)</th>
+        <th>Sodium (mg)</th>
+        <th>Potassium (mg)</th>
+        <th>Moisture (%)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+    <tfoot>
+      <tr class="total-row">
+        <td colspan="2">Total</td>
+        <td id="totalEnergy">0.00</td>
+        <td id="totalProtein">0.00</td>
+        <td id="totalCho">0.00</td>       <!-- Fixed -->
+        <td id="totalFat">0.00</td>
+        <td id="totalFiber">0.00</td>
+        <td id="totalSodium">0.00</td>
+        <td id="totalPotassium">0.00</td>
+        <td id="totalMoisture">0.00</td>
+        <td></td>
+      </tr>
+      <tr class="rda-row">
+        <td colspan="2">RDA (Editable)</td>
+        <td><input id="rdaEnergy" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaProtein" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaCho" type="number" value="0.0" step="any" onchange="calculateTotals()"></td> <!-- Fixed -->
+        <td><input id="rdaFat" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaFiber" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaSodium" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaPotassium" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td><input id="rdaMoisture" type="number" value="0.0" step="any" onchange="calculateTotals()"></td>
+        <td></td>
+      </tr>
+      <tr class="diff-row">
+        <td colspan="2">Difference</td>
+        <td id="diffEnergy">0.00</td>
+        <td id="diffProtein">0.00</td>
+        <td id="diffCho">0.00</td>      <!-- Fixed -->
+        <td id="diffFat">0.00</td>
+        <td id="diffFiber">0.00</td>
+        <td id="diffSodium">0.00</td>
+        <td id="diffPotassium">0.00</td>
+        <td id="diffMoisture">0.00</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
 
 <div class="button-container">
@@ -78,22 +78,22 @@
 <div id="ifctTableContainer" style="display: none; margin-top: 20px;">
   <h3>IFCT Food Values</h3>
   <div class="table-wrapper">
-  <table id="ifctTable">
-    <thead>
-      <tr>
-        <th>Food Item</th>
-        <th>Energy (kcal/100g)</th>
-        <th>Protein (g)</th>
-        <th>Fat (g)</th>
-        <th>CHO (g)</th>
-        <th>Fiber (g)</th>
-        <th>Sodium (mg)</th>
-        <th>Potassium (mg)</th>
-        <th>Moisture (%)</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <table id="ifctTable">
+      <thead>
+        <tr>
+          <th>Food Item</th>
+          <th>Energy (kcal/100g)</th>
+          <th>Protein (g)</th>
+          <th>Fat (g)</th>
+          <th>CHO (g)</th>
+          <th>Fiber (g)</th>
+          <th>Sodium (mg)</th>
+          <th>Potassium (mg)</th>
+          <th>Moisture (%)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </div>
 </div>
 
